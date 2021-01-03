@@ -6,7 +6,7 @@ import 'package:flutter_app_4/screens/test_screen.dart';
 void main() {
   runApp(
     MaterialApp(
-      home: TestScreen(),
+      home: DoctorList(),
       theme: ThemeData(
         primaryColor: Color(0xff07da5f)
       ),

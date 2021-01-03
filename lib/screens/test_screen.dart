@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_4/models/doctor.dart';
-import 'package:flutter_app_4/screens/base_screen.dart';
 import 'package:flutter_app_4/reusableWidgets/generic_app_bar.dart';
 import 'package:flutter_app_4/reusableWidgets/generic_bottom_navigator_bar.dart';
 

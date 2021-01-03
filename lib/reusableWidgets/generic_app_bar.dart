@@ -11,7 +11,9 @@ class GenericAppBar extends StatelessWidget {
       title: Text(this.title),
       centerTitle: true,
       leading: IconButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).maybePop();
+          },
         icon: Icon(
           Icons.arrow_back,
           color: Colors.white,

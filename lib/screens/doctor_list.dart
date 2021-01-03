@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_4/models/doctor.dart';
 import 'package:flutter_app_4/screens/doctor_details.dart';
+import 'package:flutter_app_4/reusableWidgets/generic_app_bar.dart';
+import 'package:flutter_app_4/reusableWidgets/generic_bottom_navigator_bar.dart';
 
-class DoctorList extends StatefulWidget {
-  @override
-  _DoctorListState createState() => _DoctorListState();
-}
 
-class _DoctorListState extends State<DoctorList> {
-  int _selectedItem = 0;
+class DoctorList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +15,11 @@ class _DoctorListState extends State<DoctorList> {
         child: Icon(Icons.add),
         backgroundColor: Color(0xff07da5f),
       ),
-      appBar: appBar(),
-      bottomNavigationBar: bottomNavBar(),
+      appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(60),
+          child: GenericAppBar("Doctor Listttt")
+      ),
+      bottomNavigationBar:  GenericBottomNavigatorBar(),
       body: ListView(
           children: doctors.map((e) {
         return Padding(
@@ -28,18 +28,19 @@ class _DoctorListState extends State<DoctorList> {
             width: size.width,
             height: size.height / 5,
             // color: Colors.blue,
-            child: doctorCard(e),
+            child: doctorCard(context,e),
           ),
         );
       }).toList()),
     );
   }
 
-  Widget doctorCard(Doctor doctor) {
+  Widget doctorCard(BuildContext context,Doctor doctor) {
     return GestureDetector(
       onTap: () {
         Navigator.of(context)
             .push(MaterialPageRoute(builder: (_) => DoctorDetails(doctor)));
+
       },
       child: Card(
         child: Row(
@@ -99,54 +100,4 @@ class _DoctorListState extends State<DoctorList> {
     );
   }
 
-  Widget bottomNavBar() {
-    return BottomNavigationBar(
-      currentIndex: _selectedItem,
-      onTap: (index) {
-        setState(() {
-          _selectedItem = index;
-        });
-      },
-      type: BottomNavigationBarType.fixed,
-      items: [
-        BottomNavigationBarItem(
-          icon: Icon(Icons.home),
-          label: 'Home',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.notification_important_sharp),
-          label: 'Notification',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.calendar_today),
-          label: 'Schedule',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.person_rounded),
-          label: 'Profile',
-        ),
-      ],
-    );
-  }
-
-  Widget appBar() {
-    return AppBar(
-      title: Text('Doctor List'),
-      centerTitle: true,
-      leading: IconButton(
-        onPressed: () {},
-        icon: Icon(
-          Icons.arrow_back,
-          color: Colors.white,
-        ),
-      ),
-      actions: [
-        IconButton(
-          icon: Icon(Icons.workspaces_filled),
-          onPressed: () {},
-          color: Colors.white,
-        )
-      ],
-    );
-  }
 }
