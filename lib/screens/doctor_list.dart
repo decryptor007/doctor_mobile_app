@@ -17,7 +17,7 @@ class DoctorList extends StatelessWidget {
       ),
       appBar: PreferredSize(
           preferredSize: const Size.fromHeight(60),
-          child: GenericAppBar("Doctor Listttt")
+          child: GenericAppBar("Doctor List")
       ),
       bottomNavigationBar:  GenericBottomNavigatorBar(),
       body: ListView(

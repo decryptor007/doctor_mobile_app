@@ -60,6 +60,32 @@ class DoctorDetails extends StatelessWidget {
                         fontSize: 20,
                         fontStyle: FontStyle.italic),
                   ),
+                  Row(
+                    children:[
+                      Icon(
+                        Icons.star,
+                        color: Color(0xffffd500),
+                      ),
+                      Icon(
+                        Icons.star,
+                        color: Color(0xffffd500),
+                      ),
+                      Icon(
+                        Icons.star,
+                        color: Color(0xffffd500),
+                      ),
+                      Icon(
+                        Icons.star,
+                        color: Color(0xffffd500),
+                      ),
+                      Icon(
+                        Icons.star,
+                        color: Color(0xffffd500),
+                      ),
+                      Text("4.9")
+                    ]
+                  )
+
                 ],
               )
             ],
