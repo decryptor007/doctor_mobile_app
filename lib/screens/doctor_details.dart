@@ -63,4 +63,5 @@ class DoctorDetails extends StatelessWidget {
       ),
     );
   }
+
 }
