@@ -10,6 +10,7 @@ class DoctorDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: PreferredSize(
           preferredSize: const Size.fromHeight(60),
@@ -134,8 +135,8 @@ class DoctorDetails extends StatelessWidget {
               ),
               Image.asset(
                 'assets/images/9.png',
-                height:250,
-                width:250
+                height:size.height*0.4,
+                width:size.width*0.8
               )
 
             ],
@@ -147,7 +148,7 @@ class DoctorDetails extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
               ),
               Container(
-                  width: 300,
+                  width: size.width*0.8,
                   child:FlatButton(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(35.0),
