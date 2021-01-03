@@ -146,7 +146,9 @@ class DoctorDetails extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(8.0),
               ),
-              FlatButton(
+              Container(
+                  width: 300,
+                  child:FlatButton(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(35.0),
                     side: BorderSide(color: Color(0xff07da5f))),
@@ -160,7 +162,7 @@ class DoctorDetails extends StatelessWidget {
                     fontSize: 20.0,
                   ),
                 ),
-              ),
+              )),
 
             ],
           ),
