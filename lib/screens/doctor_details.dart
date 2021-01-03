@@ -16,7 +16,7 @@ class DoctorDetails extends StatelessWidget {
           child: GenericAppBar("Doctor Details")
       ),
       bottomNavigationBar:  GenericBottomNavigatorBar(),
-      body: Column(
+      body: ListView(
         children: [
           Row(
             children: [
@@ -63,6 +63,111 @@ class DoctorDetails extends StatelessWidget {
               )
             ],
           ),
+          const SizedBox(height: 15),
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+              ),
+              Text(
+                "Short Description",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontStyle: FontStyle.italic),
+              )
+            ]
+          ),
+          const SizedBox(height: 5),
+          Row(
+          children: [
+          Padding(
+          padding: const EdgeInsets.all(10.0),
+            ),
+            Flexible(child:Text(
+            doctor.shortDescription,
+            style: TextStyle(
+            color: Colors.black,
+            fontSize: 18,
+            fontStyle: FontStyle.italic),
+            ))
+            ],
+          ),
+          const SizedBox(height: 15),
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+              ),
+              Flexible(child:Text(
+                "Location",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontStyle: FontStyle.italic),
+              ))
+            ],
+          ),
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+              ),
+              Icon(
+                Icons.location_on_outlined,
+                color: Colors.grey,
+              ),
+              Flexible(child:Text(
+                doctor.address,
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontStyle: FontStyle.italic),
+              ))
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+              ),
+              Image.asset(
+                'assets/images/9.png',
+                height:250,
+                width:250
+              )
+
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+              ),
+              FlatButton(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(35.0),
+                    side: BorderSide(color: Color(0xff07da5f))),
+                color: Color(0xff07da5f),
+                textColor: Colors.white,
+                padding: EdgeInsets.all(20.0),
+                onPressed: () {},
+                child: Text(
+                  "Request",
+                  style: TextStyle(
+                    fontSize: 20.0,
+                  ),
+                ),
+              ),
+
+            ],
+          ),
+
+
+
+
         ],
       ),
     );
